@@ -1,0 +1,29 @@
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .score {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .x-score {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .o-score {
+    background-color: #facc15;
+    color: black;
+  }
+  
+  .draw-score {
+    background-color: #d1d5db;
+    color: black;
+  }
+  

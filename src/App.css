@@ -1,0 +1,16 @@
+.app {
+  text-align: center;
+  background-color: #3d1a54;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: #facc15;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: lowercase;
+}
