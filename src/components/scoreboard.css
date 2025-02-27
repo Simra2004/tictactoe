@@ -3,6 +3,8 @@
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
+    align-items: center;
+    color: white;
   }
   
   .score {
@@ -26,4 +28,20 @@
     background-color: #d1d5db;
     color: black;
   }
-  
+  .score-playerX{
+    font-size: 25px;
+    /* margin-right: 700px; */
+  }
+  .score-draw{
+    font-size: 25px;
+    /* margin-left: 200px;
+    margin-right:200px ; */
+    margin-inline: 200px;
+  }
+  .score-playerO{
+    font-size: 25px;
+    /* /* margin-left: 200px;
+    margin-right:200px ; 
+   margin right: 200px; */
+
+  }

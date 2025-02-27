@@ -4,10 +4,9 @@ import "./scoreboard.css"
 
 const ScoreBoard = ({ scores }) => (
   <div className="scoreboard">
-    <div className="score playerX">X: {scores.X}</div>
-    <div className="score draw">Draw: {scores.draw}</div>
-    <div className="score playerO">O: {scores.O}</div>
+    {scores.X!=0 && <div className="score-playerX">X: {scores.X}</div>  } 
+    {scores.draw!=0 && <div className="score-draw">Draw: {scores.draw}</div>}
+    {scores.Y!=0 && <div className="score-playerO">Y: {scores.Y}</div>}
   </div>
 );
-
 export default ScoreBoard;

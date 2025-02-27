@@ -29,7 +29,6 @@ const GameBoard = () => {
       setTimeout(resetBoard, 1000);
     }
   };
-
   const resetBoard = () => setBoard(Array(9).fill(null));
 
   return (

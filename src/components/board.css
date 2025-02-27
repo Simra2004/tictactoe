@@ -1,9 +1,12 @@
 .board {
-    display: grid;
-    grid-template-columns: repeat(3, 80px);
-    grid-gap: 10px;
-    background-color: #2c0b43;
-    padding: 15px;
-    border-radius: 10px;
-  }
-  
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(3, 80px);
+        grid-gap: 10px;
+        background-color: #2C0B43;
+        border-radius: 15px;
+        width: 250px;
+        padding: 20px;
+        width: 250px;
+
+}

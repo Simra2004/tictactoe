@@ -39,13 +39,13 @@ import ScoreBoard from "./components/scoreboard";
 const App = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
-  const [scores, setScores] = useState({ X: 0, O: 0, draw: 0 });
+  const [scores, setScores] = useState({ X: 0, Y: 0, draw: 0 });
 
   const handleClick = (index) => {
     if (board[index]) return;
 
     const newBoard = [...board];
-    newBoard[index] = isXNext ? "X" : "O";
+    newBoard[index] = isXNext ? "X" : "Y";
     setBoard(newBoard);
     setIsXNext(!isXNext);
   };
@@ -53,7 +53,7 @@ const App = () => {
   return (
     <div className="app">
       <h1 className="title">tic. tac. toe.</h1>
-      <Scoreboard scores={scores} />
+      <ScoreBoard scores={scores} />
       <Board board={board} onClick={handleClick} />
     </div>
   );
