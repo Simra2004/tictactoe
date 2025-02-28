@@ -8,7 +8,6 @@ import ScoreBoard from "./components/scoreboard";
 
 // function App() {
 //   const [count, setCount] = useState(0)
-
 //   return (
 //     <>
 //       <div>
@@ -34,8 +33,6 @@ import ScoreBoard from "./components/scoreboard";
 //     </>
 //   )
 // }
-
-
 const App = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
@@ -43,11 +40,49 @@ const App = () => {
 
   const handleClick = (index) => {
     if (board[index]) return;
-
     const newBoard = [...board];
     newBoard[index] = isXNext ? "X" : "Y";
     setBoard(newBoard);
-    setIsXNext(!isXNext);
+
+    setTimeout(() => {
+      if (
+        newBoard[0] === "X" && newBoard[1] === "X" && newBoard[2] === "X" ||
+        newBoard[3] === "X" && newBoard[4] === "X" && newBoard[5] === "X" ||
+        newBoard[6] === "X" && newBoard[7] === "X" && newBoard[8] === "X" ||
+        newBoard[0] === "X" && newBoard[3] === "X" && newBoard[6] === "X" ||
+        newBoard[1] === "X" && newBoard[4] === "X" && newBoard[7] === "X" ||
+        newBoard[2] === "X" && newBoard[5] === "X" && newBoard[8] === "X" ||
+        newBoard[0] === "X" && newBoard[4] === "X" && newBoard[8] === "X" ||
+        newBoard[2] === "X" && newBoard[4] === "X" && newBoard[6] === "X"
+      ) {
+        alert("X is the winner");
+        setBoard(Array(9).fill(null));
+        return;
+      }
+
+      if (
+        newBoard[0] === "Y" && newBoard[1] === "Y" && newBoard[2] === "Y" ||
+        newBoard[3] === "Y" && newBoard[4] === "Y" && newBoard[5] === "Y" ||
+        newBoard[6] === "Y" && newBoard[7] === "Y" && newBoard[8] === "Y" ||
+        newBoard[0] === "Y" && newBoard[3] === "Y" && newBoard[6] === "Y" ||
+        newBoard[1] === "Y" && newBoard[4] === "Y" && newBoard[7] === "Y" ||
+        newBoard[2] === "Y" && newBoard[5] === "Y" && newBoard[8] === "Y" ||
+        newBoard[0] === "Y" && newBoard[4] === "Y" && newBoard[8] === "Y" ||
+        newBoard[2] === "Y" && newBoard[4] === "Y" && newBoard[6] === "Y"
+      ) {
+        alert("Y is the winner");
+        setBoard(Array(9).fill(null));
+        return;
+      }
+      
+      if (!newBoard.includes(null)) {
+        alert("It's a draw!");
+        setBoard(Array(9).fill(null));
+        return;
+      }
+    
+      setIsXNext(!isXNext);
+    }, 100);
   };
 
   return (
@@ -59,6 +94,4 @@ const App = () => {
   );
 };
 
-
-
-export default App
+export default App;
